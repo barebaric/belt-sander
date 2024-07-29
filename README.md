@@ -79,17 +79,29 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Order parts
   
-   - [ ] Configure and test ODrive
+   - [ ] Double check polarity of xdrive connectors, they use red for GND in some cases! (GPIO-connector seems wrong in photos)
   
-   - [ ] Program microcontroller with potentiometer
+   - [ ] Figure out maximum power draw of 5V pins of ODrive. (Sufficient for ESP8266+Display? Otherwise need a separate step down module)
+  
+   - [ ] Breadboard the whole setup
+
+- [ ] Software
+  
+   - [ ] Configure and test ODrive with motor
+  
+   - [ ] Figure out ESP8266 / ODrive communication via SPI
+  
+   - [ ] Program ESP8266 with potentiometer to set velocity
+  
+   - [ ] Program ESP8266 to display set speed
+  
+   - [ ] Retrieve and display actual speed from ODrive
 
 - [ ] Design and refine an electronics enclosure module to fit into the sander
   
    - [ ] Enclosure
   
    - [ ] Potentiometer knob
-  
-   - [ ] Perhaps include a display for speed?
   
    - [ ] Final assembly
 
