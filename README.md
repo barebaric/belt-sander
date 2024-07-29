@@ -8,7 +8,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 * Using only 3D printed components + widely available off-the-shelf hardware (as far as possible) to make it fast and easy to reproduce.
 
-* For belt size 915 x 100 mm.
+* For belt size 915 x 100 mm (but may offer other configurations in the final release).
 
 * Speed controllable brushless motor.
 
