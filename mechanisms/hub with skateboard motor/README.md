@@ -1,4 +1,5 @@
 # Hub with skateboard motor with shaft
 
-This model is only here to proove that this type of motor is unsuitable; the axis stickout is too large.
+![6384 motor](../../components/90%20mm%20skateboard%20motor/motor.jpg)
 
+This model is only here to prove that this type of motor is unsuitable; the axis stickout is too large.
