@@ -55,23 +55,25 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - **Chosen**: MKS XDrive (ODrive) Mini ![MKS XDrive (Odrive) Mini](electronics/odrive-mini/odrive.jpg)
 
+- [x] Choose a microcontroller
+  
+   - Chose the **NodeMCU ESP8266 with 0.96 display**. Reasoning: May be overkill, but it has good mounting holes, and 3 bucks to add a speed display is totally worth it in my opinion. Not planning to use the onboard WiFi.
+
 - [ ] Create CAD models for all electronic components
   
    - [ ] [90 mm skateboard motor](components/90%20mm%20skateboard%20motor%20(flat%20type)): **Draft done**, but some dimensions guessed for lack of technical drawings from the supplier. Will need updating once the parts arrive.
   
    - [x] [MKS XDrive (Odrive) Mini](electronics/odrive-mini)
   
-   - [ ] Brake resistor
+   - [ ] Brake resistor *(3rd party model found, to be validated once products arrive)*
   
-   - [ ] Potentiometer
+   - [x] 10k Potentiometer *(3rd party model found)*
   
-   - [ ] Power switch
+   - [x] Power switch *(3rd party model found)*
   
-   - [ ] Microcontroller
+   - [x] NodeMCU ESP8266 with 0.96 display *(3rd party model found)*
   
    - [ ] Fan (if needed based on testing)
-  
-   - [ ] Makita battery adapter
 
 - [ ] Build and test the electronics
   
@@ -119,6 +121,8 @@ In this project I am designing and building an edge belt sander. Design constrai
 - [ ] Recess the tightener knob into the unit.
 
 - [ ] Bottom could be 2mm slimmer because it will be seated in a base plate anyway.
+
+- [ ] Make lever and alignment screw in different color than the main housing.
 
 ## Potential extensions after V2
 
