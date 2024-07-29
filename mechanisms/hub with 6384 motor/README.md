@@ -1,6 +1,6 @@
 # Hub with 6348 motor
 
-![6384 motor](../../components/6384%20motor%20dimensions.jpg)
+![6384 motor](../../components/6384%20motor/6384%20motor%20dimensions.jpg)
 
 This model is another attempt that I dismissed, mainly for cable management reasons:
 
