@@ -51,7 +51,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - Dismissed: ZS-X11D1 module. Power limit too low & documentation insufficient.
      
-     ![ZS-X11D1](media/ZS-X11D1 module.jpg)
+     ![ZS-X11D1](media/ZS-X11D1%20module.jpg)
   
    - **Chosen**: MKS XDrive (ODrive) Mini ![MKS XDrive (Odrive) Mini](electronics/odrive-mini/odrive.jpg)
 
@@ -118,7 +118,6 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [ ] Recess the tightener knob into the unit.
 
-- [ ] 
 - [ ] Bottom could be 2mm slimmer because it will be seated in a base plate anyway.
 
 ## Potential extensions after V2
