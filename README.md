@@ -99,9 +99,11 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [ ] Design and refine an electronics enclosure module to fit into the sander
   
-   - [ ] Enclosure
-  
    - [x] Potentiometer knob
+  
+   - [x] Panel for display and speed knob
+  
+   - [ ] Odrive mount plate
   
    - [ ] Final assembly
 
