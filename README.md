@@ -32,9 +32,9 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Design, test, and refine the lever mechanism for the belt tightener
   
-   - Done after testing more than 20 different prototypes: [type 1](mechanisms/disc%20lever), [type 2](mechanisms/slotblock%20lever), [type 3](mechanisms/rotating%20lever)
-   - [Latest iteration, successfully printed and tested](mechanisms/push%20lever)
-     ![Lever designs](media/levers.jpg)
+   - Done after testing more than 20 different prototypes: [type 1](subassemblies/disc%20lever), [type 2](subassemblies/slotblock%20lever), [type 3](subassemblies/rotating%20lever)
+   - [Latest iteration, successfully printed and tested](subassemblies/push%20lever)
+     ![Lever designs](subassemblies/push-lever.jpg)
 
 - [x] Choose a motor
   
