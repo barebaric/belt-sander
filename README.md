@@ -101,7 +101,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [ ] Enclosure
   
-   - [ ] Potentiometer knob
+   - [x] Potentiometer knob
   
    - [ ] Final assembly
 
