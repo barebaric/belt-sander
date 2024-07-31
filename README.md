@@ -1,6 +1,6 @@
 # Mostly Printed Edge Belt Sander
 
-![Version 1 Prototype](media/sander-v1.jpg)
+![Version 1 Prototype](v1/sander-v1.jpg)
 
 ## Project Goals And Design Constraints
 
