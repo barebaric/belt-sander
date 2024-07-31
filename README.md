@@ -34,7 +34,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - Done after testing more than 20 different prototypes: [type 1](subassemblies/disc%20lever), [type 2](subassemblies/slotblock%20lever), [type 3](subassemblies/rotating%20lever)
    - [Latest iteration, successfully printed and tested](subassemblies/push%20lever)
-     ![Lever designs](subassemblies/push-lever.jpg)
+     ![Lever designs](subassemblies/push%20lever/push-lever.jpg)
 
 - [x] Choose a motor
   
