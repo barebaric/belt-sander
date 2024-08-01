@@ -103,7 +103,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Panel for display and speed knob
   
-   - [ ] Odrive mount plate
+   - [x] Odrive mount plate
   
    - [ ] Final assembly
 
