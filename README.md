@@ -103,7 +103,7 @@ In this project I am designing and building an edge belt sander. Design constrai
    - [ ] Retrieve and display actual speed from ODrive
 
 - [ ] Design and refine an electronics enclosure module to fit into the sander
-  <img src="file:///home/sam/Documents/projects/hardware/ARCHIVE%20-%20Upcoming/Belt%20sander/subassemblies/eenclosure/eenclosure.png" title="" alt="eenclosure.png" width="697">
+  <img src="subassemblies/eenclosure/eenclosure.png" title="" alt="eenclosure.png" width="697">
   
    - [x] Potentiometer knob
   
