@@ -34,7 +34,8 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - Done after testing more than 20 different prototypes: [type 1](subassemblies/disc%20lever), [type 2](subassemblies/slotblock%20lever), [type 3](subassemblies/rotating%20lever)
    - [Latest iteration, successfully printed and tested](subassemblies/push%20lever)
-     ![Lever designs](subassemblies/push%20lever/push-lever.jpg)
+     
+     <img src="subassemblies/push%20lever/push-lever.jpg" title="" alt="Lever designs" width="495">
 
 - [x] Choose a motor
   
@@ -42,18 +43,22 @@ In this project I am designing and building an edge belt sander. Design constrai
    - Dismissed: [Skateboard motor type 1](components/90%20mm%20skateboard%20motor). Doesn't fit into desired envelope (see design constraints above). It is too long with the shaft included.
    - Dismissed: [6384 motor](components/6384%20motor). Just about fits, but with no space left for routing the cable securely and more expensive because it requires large bearings.
    - **Chosen**: [90 mm skateboard motor type 2](components/90%20mm%20skateboard%20motor%20(flat%20type))
-     ![Skateboard motor](components/90%20mm%20skateboard%20motor%20(flat%20type)/motor.jpg)
+     
+     <img src="components/90%20mm%20skateboard%20motor%20(flat%20type)/motor.jpg" title="" alt="Skateboard motor" width="495">
 
 - [x] Choose a BLDC controller
   
    - Dismissed: SNR8503M BLDC controller module for insufficient documentation. Is is also too close to the motor power limit, so may be risky to use anyway.
-     ![SNR8503M module](media/SNR8503M-BLDC-controller-module.jpg)
+     
+     <img src="media/SNR8503M-BLDC-controller-module.jpg" title="" alt="SNR8503M module" width="495">
   
    - Dismissed: ZS-X11D1 module. Power limit too low & documentation insufficient.
      
-     ![ZS-X11D1](media/ZS-X11D1%20module.jpg)
+     <img src="media/ZS-X11D1%20module.jpg" title="" alt="ZS-X11D1" width="491">
   
-   - **Chosen**: MKS XDrive (ODrive) Mini ![MKS XDrive (Odrive) Mini](electronics/odrive-mini/odrive.jpg)
+   - **Chosen**: MKS XDrive (ODrive) Mini
+     
+     <img src="electronics/odrive-mini/odrive.jpg" title="" alt="MKS XDrive (Odrive) Mini" width="495">
 
 - [x] Choose a microcontroller
   
@@ -98,6 +103,7 @@ In this project I am designing and building an edge belt sander. Design constrai
    - [ ] Retrieve and display actual speed from ODrive
 
 - [ ] Design and refine an electronics enclosure module to fit into the sander
+  <img src="file:///home/sam/Documents/projects/hardware/ARCHIVE%20-%20Upcoming/Belt%20sander/subassemblies/eenclosure/eenclosure.png" title="" alt="eenclosure.png" width="697">
   
    - [x] Potentiometer knob
   
@@ -110,7 +116,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 - [ ] Design and refine hub driven roller with the skateboard motor.
   
    - [ ] [Model drafted](subassemblies/hub%with%20skateboard%20motor%20(flat%20type)), but some dimensions guessed for lack of technical drawings of the motor. Will need updating after finalizing the motor model.
-
+  
    - [ ] Depending on heat development, the hub could be made slightly smaller to make the belt unit wider.
 
 - [ ] Create the new overall assembly tying everything together.
