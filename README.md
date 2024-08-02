@@ -101,15 +101,16 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Potentiometer knob
   
-   - [x] Panel for display and speed knob
+   - [ ] Panel for display and speed knob. **Draft done, but 3rd party ESP model seems to have errors, needs updating when parts arrive**
   
-   - [x] Odrive mount plate
+   - [x] Enclosure with mount plate for ODrive Mini and brake resistor.
   
    - [ ] Final assembly
 
 - [ ] Design and refine hub driven roller with the skateboard motor.
   
-   - [ ] [Model drafted](hub with skateboard motor (flat type)), but some dimensions guessed for lack of technical drawings of the motor. Will need updating after finalizing the motor model.
+   - [ ] [Model drafted](subassemblies/hub%with%20skateboard%20motor%20(flat%20type)), but some dimensions guessed for lack of technical drawings of the motor. Will need updating after finalizing the motor model.
+
    - [ ] Depending on heat development, the hub could be made slightly smaller to make the belt unit wider.
 
 - [ ] Create the new overall assembly tying everything together.
