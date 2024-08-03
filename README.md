@@ -33,6 +33,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 - [x] Design, test, and refine the lever mechanism for the belt tightener
   
    - Done after testing more than 20 different prototypes: [type 1](subassemblies/disc%20lever), [type 2](subassemblies/slotblock%20lever), [type 3](subassemblies/rotating%20lever)
+  
    - [Latest iteration, successfully printed and tested](subassemblies/push%20lever)
      
      <img src="subassemblies/push%20lever/push-lever.jpg" title="" alt="Lever designs" width="495">
@@ -40,8 +41,11 @@ In this project I am designing and building an edge belt sander. Design constrai
 - [x] Choose a motor
   
    - Dismissed: [997 motor](components/997%20motor), mostly due to ventilation requirements.
+  
    - Dismissed: [Skateboard motor type 1](components/90%20mm%20skateboard%20motor). Doesn't fit into desired envelope (see design constraints above). It is too long with the shaft included.
+  
    - Dismissed: [6384 motor](components/6384%20motor). Just about fits, but with no space left for routing the cable securely and more expensive because it requires large bearings.
+  
    - **Chosen**: [90 mm skateboard motor type 2](components/90%20mm%20skateboard%20motor%20(flat%20type))
      
      <img src="components/90%20mm%20skateboard%20motor%20(flat%20type)/motor.jpg" title="" alt="Skateboard motor" width="495">
@@ -62,7 +66,8 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Choose a microcontroller
   
-   - Chose the **NodeMCU ESP8266 with 0.96 display**. Reasoning: May be overkill, but it has good mounting holes, and 3 bucks to add a speed display is totally worth it in my opinion. Not planning to use the onboard WiFi.
+   - Dismissed: **NodeMCU ESP8266 with 0.96 display**. Large form factor made panel dimensions too large.
+   - Chosen **ESP8266 (or ESP32) with separate display**.
 
 - [ ] Create CAD models for all electronic components
   
@@ -76,7 +81,9 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Power switch *(3rd party model found)*
   
-   - [x] NodeMCU ESP8266 with 0.96 display *(3rd party model found)*
+   - [x] 1.3" display
+  
+   - [ ] Microcontroller
   
    - [ ] Fan (if needed based on testing)
 
@@ -86,7 +93,10 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [ ] Double check polarity of xdrive connectors, they use red for GND in some cases! (GPIO-connector seems wrong in photos)
   
-   - [ ] Figure out maximum power draw of 5V pins of ODrive. (Sufficient for ESP8266+Display? Otherwise need a separate step down module)
+   - [x] Figure out maximum power draw of VCC pins of ODrive. (Sufficient for microcontroller+display? Otherwise need a separate step down module)
+     
+     *Should suffice: The XDrive uses an STM32F405RG, which according to its [data sheet](https://www.st.com/resource/en/datasheet/stm32f405rg.pdf) can provide a maximum of 240mA at 3.3v on Vdd.
+     The OLED display draws 0.08W = 24.2mA, the ESP8266 has a maximum draw of 170mA and much lower with WiFi disabled. To be safe I'll disable WiFi on the controller.*
   
    - [ ] Breadboard the whole setup
 
@@ -103,6 +113,7 @@ In this project I am designing and building an edge belt sander. Design constrai
    - [ ] Retrieve and display actual speed from ODrive
 
 - [ ] Design and refine an electronics enclosure module to fit into the sander
+  
   <img src="subassemblies/eenclosure/eenclosure.png" title="" alt="eenclosure.png" width="697">
   
    - [x] Potentiometer knob
