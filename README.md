@@ -107,9 +107,9 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Potentiometer knob
   
-   - [ ] Panel for display and speed knob. **Draft made, but ESP8266 with display takes up too much panel space. Needs redesign with microcontroller and display separated**
+   - [x] Panel for display and speed knob.
   
-   - [ ] Enclosure with mount plate for ODrive Mini and brake resistor. **Draft made, but enclosure too large for sander assembly. needs redesign**
+   - [x] Enclosure with mount plate for ODrive Mini and brake resistor.
   
    - [ ] Final assembly
 
