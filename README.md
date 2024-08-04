@@ -12,8 +12,10 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 * Speed controllable brushless motor.
 
-* Belt change and alignment adjustment with no tools.
-- Low profile form factor of less than 14cm - the sander should fit into a drawer when not in use.
+* Belt change ~~and alignment adjustment~~ with no tools. *I had to compromise, because after adding the electronics there was not enough space for a large belt alignment screw - belt alignment now does require a hex key driver*
+
+* Low profile form factor of less than 14cm - the sander should fit into a drawer when not in use.
+
 * Modular design to allow for customization and faster/cheapter iteration during development.
 
 * Ideally: Option to power from two 18V batteries.
@@ -134,7 +136,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Fully model the design: *Draft done*
   
-   - [ ] Create new belt aligner.
+   - [x] Create new belt aligner.
   
    - [ ] Go through every feature (screws, bearings, etc.) to try and reduce the amount of different hardware needed.
   
