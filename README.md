@@ -132,7 +132,13 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [ ] Create the new overall assembly tying everything together.
   
-   - [ ] Create the design.
+   - [x] Fully model the design: *Draft done*
+  
+   - [ ] Create new belt aligner.
+  
+   - [ ] Go through every feature (screws, bearings, etc.) to try and reduce the amount of different hardware needed.
+  
+   - [ ] Check and refine all models. *Waiting for parts to arrive*
   
    - [ ] Print, test, refine, iterate
 
@@ -142,25 +148,23 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 ## Incorporate lessons learned from V1 prototype
 
-- [ ] Provide more clearance (1.5mm on each side?) between rollers and housing, to fit washers on both sides.
+- [x] Provide more clearance (1.5mm on each side?) between rollers and housing, to fit washers on both sides.
 
-- [ ] Make left carriage bearing cutouts larger - 23mm probably. It doesn't need tight clearance, as it is pulled to the right anyway.
+- [x] Make left carriage bearing cutouts larger - 23mm probably. It doesn't need tight clearance, as it is pulled to the right anyway.
 
 - [ ] Separate the carriage arm from the bracket, make them connectable using screws. For better printability/modularity.
 
-- [ ] Make the arm shorter, to make more space for electronics in the unit.
+- [x] Make the arm shorter, to make more space for electronics in the unit.
 
-- [ ] Recess the tightener knob into the unit.
+- [x] Recess the tightener knob into the unit. *Knob became obsolete with new lever design*
 
-- [ ] Bottom could be 2mm slimmer because it will be seated in a base plate anyway.
+- [x] Bottom could be 2mm slimmer because it will be seated in a base plate anyway. *Not slimmed down because space was needed for routing the cable in it.*
 
 - [ ] Make lever and alignment screw in different color than the main housing.
 
 ## Potential extensions after V2
 
 * Dust extraction
-
-* Speed display
 
 * Oscillating unit
 
