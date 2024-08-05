@@ -87,6 +87,8 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [ ] Microcontroller
   
+   - [ ] Temperature sensor
+  
    - [ ] Fan (if needed based on testing)
 
 - [ ] Build and test the electronics
@@ -104,13 +106,16 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [ ] Software
   
+   - [ ] Potentiometer to set velocity
+  
    - [ ] Configure and test ODrive with motor
   
    - [ ] Figure out ESP8266 / ODrive communication via SPI
   
-   - [ ] Program ESP8266 with potentiometer to set velocity
+   - [ ] [Temperature sensor](electronics/temp-sensor)
   
-   - [ ] Program ESP8266 to display set speed
+   - [ ]   
+   - [ ] [Display](electronics/1.3 in display)
   
    - [ ] Retrieve and display actual speed from ODrive
 
