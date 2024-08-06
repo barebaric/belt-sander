@@ -108,7 +108,9 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Potentiometer to set velocity
   
-   - [ ] Configure and test ODrive with motor
+   - [x] [Configure and test ODrive with motor](components/90%20mm%20skateboard%20motor%20(flat%20type))
+  
+   - [ ] Resolve "ENCODER_ERROR_ILLEGAL_HALL_STATE" issue by adding filter capacitors: [Encoder error ERROR_ILLEGAL_HALL_STATE](https://discourse.odriverobotics.com/t/encoder-error-error-illegal-hall-state/1047/7)
   
    - [ ] Figure out ESP8266 / ODrive communication via SPI
   
