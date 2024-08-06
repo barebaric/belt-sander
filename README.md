@@ -77,7 +77,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] [MKS XDrive (Odrive) Mini](electronics/odrive-mini)
   
-   - [ ] Brake resistor *(3rd party model found, to be validated once products arrive)*
+   - [x] Brake resistor *(3rd party model found)*
   
    - [x] 10k Potentiometer *(3rd party model found)*
   
