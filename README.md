@@ -106,7 +106,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [ ] Software
   
-   - [ ] Potentiometer to set velocity
+   - [x] Potentiometer to set velocity
   
    - [ ] Configure and test ODrive with motor
   
@@ -114,7 +114,6 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [ ] [Temperature sensor](electronics/temp-sensor)
   
-   - [ ]   
    - [ ] [Display](electronics/1.3 in display)
   
    - [ ] Retrieve and display actual speed from ODrive
