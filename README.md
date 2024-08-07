@@ -73,7 +73,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [ ] Create CAD models for all electronic components
   
-   - [ ] [90 mm skateboard motor](components/90%20mm%20skateboard%20motor%20(flat%20type)): **Draft done**, but some dimensions guessed for lack of technical drawings from the supplier. Will need updating once the parts arrive.
+   - [x] [90 mm skateboard motor](components/90%20mm%20skateboard%20motor%20(flat%20type))
   
    - [x] [MKS XDrive (Odrive) Mini](electronics/odrive-mini)
   
