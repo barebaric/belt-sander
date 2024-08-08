@@ -83,7 +83,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Power switch *(3rd party model found)*
   
-   - [x] 1.3" display
+   - [x] [1.3" display](electronics/1.3%20in%20display)
   
    - [ ] Microcontroller
   
