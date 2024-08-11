@@ -69,7 +69,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 - [x] Choose a microcontroller
   
    - Dismissed: **NodeMCU ESP8266 with 0.96 display**. Large form factor made panel dimensions too large.
-   - Chosen **ESP8266 (or ESP32) with separate display**.
+   - Chosen **ESP32 S2 Mini with separate display**.
 
 - [ ] Create CAD models for all electronic components
   
@@ -95,7 +95,9 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Order parts
   
-   - [ ] Double check polarity of xdrive connectors, they use red for GND in some cases! (GPIO-connector seems wrong in photos)
+   - [x] Double check polarity of xdrive connectors, they use red for GND in some cases! (GPIO-connector seems wrong in photos)
+     
+     *The connector is indeed wrong - red is GND. Be careful.*
   
    - [x] Figure out maximum power draw of VCC pins of ODrive. (Sufficient for microcontroller+display? Otherwise need a separate step down module)
      
@@ -112,7 +114,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [ ] Resolve "ENCODER_ERROR_ILLEGAL_HALL_STATE" issue by adding filter capacitors: [Encoder error ERROR_ILLEGAL_HALL_STATE](https://discourse.odriverobotics.com/t/encoder-error-error-illegal-hall-state/1047/7)
   
-   - [ ] Figure out ESP8266 / ODrive communication via SPI
+   - [ ] Figure out ESP8266 / ODrive communication. Details of the investigation [documented here](electronics/odrive-mini/README.md)
   
    - [ ] [Temperature sensor](electronics/temp-sensor)
   
