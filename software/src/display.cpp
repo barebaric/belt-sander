@@ -62,13 +62,13 @@ void Display::drawSpeed(float speed) {
 
     // Calculate the angle corresponding to the percentage
     float angle = speed * maxAngle;
-    angle = (angle < 1) ? 1 : angle;
+    angle = (angle < 2) ? 2 : angle;
 
     // Draw the circular sector (arc)
     _u8g2.setDrawColor(1);
     drawFilledSector(centerX, centerY, radius, startAngle, startAngle+angle);
     _u8g2.setDrawColor(0);
-    drawFilledSector(centerX, centerY, innerRadius, startAngle-1, startAngle+angle+2);
+    drawFilledSector(centerX, centerY, innerRadius, startAngle-3, startAngle+angle+3);
     _u8g2.setDrawColor(1);
 
     // Convert percentage value to string
@@ -76,7 +76,7 @@ void Display::drawSpeed(float speed) {
     snprintf(percentStr, sizeof(percentStr), "%d%%", (int)(speed*100));
 
     // Draw the percentage text in the center
-    _u8g2.setFont(u8g2_font_ncenB08_tr);  // Choose a font
+    _u8g2.setFont(u8g2_font_tenthinnerguys_tf);  // Choose a font
     int textWidth = _u8g2.getStrWidth(percentStr);
     _u8g2.drawStr(centerX - (textWidth / 2), centerY + 4, percentStr);
 }

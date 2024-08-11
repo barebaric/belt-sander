@@ -28,5 +28,5 @@ void loop() {
   display.drawSpeed(potentiometer.value());
   display.sendBuffer();
 
-  delay(50);
+  delay(20);
 }
