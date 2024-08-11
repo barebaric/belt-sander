@@ -15,8 +15,20 @@ public:
     // Clear the display
     void clear();
 
+    // Clear the display buffer
+    void clearBuffer();
+
+    // Clear the display buffer
+    void sendBuffer();
+
     // Draw a string at the specified position
     void drawString(int x, int y, const char* str);
+
+    // Draw the velocity in percent
+    void drawFilledSector(int centerX, int centerY, int radius, float startAngle, float endAngle);
+
+    // Draw the velocity in percent
+    void drawSpeed(float speed);
 
 private:
     uint8_t _sda;
