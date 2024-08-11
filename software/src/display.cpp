@@ -54,8 +54,8 @@ void Display::drawFilledSector(int centerX, int centerY, int radius, float start
 void Display::drawSpeed(float speed) {
     int centerX = 64;  // Center X of the screen
     int centerY = 32;  // Center Y of the screen
-    int radius = 30;   // Radius of the circle
-    int innerRadius = 20;
+    int radius = centerY-2;   // Radius of the circle
+    int innerRadius = radius-10;
 
     float startAngle = -200.0;
     float maxAngle = 220.0;
@@ -71,11 +71,9 @@ void Display::drawSpeed(float speed) {
     drawFilledSector(centerX, centerY, innerRadius, startAngle-3, startAngle+angle+3);
     _u8g2.setDrawColor(1);
 
-    // Convert percentage value to string
+    // Draw the percentage text in the center
     char percentStr[5];
     snprintf(percentStr, sizeof(percentStr), "%d%%", (int)(speed*100));
-
-    // Draw the percentage text in the center
     _u8g2.setFont(u8g2_font_tenthinnerguys_tf);  // Choose a font
     int textWidth = _u8g2.getStrWidth(percentStr);
     _u8g2.drawStr(centerX - (textWidth / 2), centerY + 4, percentStr);
