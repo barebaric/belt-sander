@@ -112,9 +112,11 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] [Configure and test ODrive with motor](components/90%20mm%20skateboard%20motor%20(flat%20type))
   
-   - [ ] Resolve "ENCODER_ERROR_ILLEGAL_HALL_STATE" issue by adding filter capacitors: [Encoder error ERROR_ILLEGAL_HALL_STATE](https://discourse.odriverobotics.com/t/encoder-error-error-illegal-hall-state/1047/7)
+   - [x] Resolve "ENCODER_ERROR_ILLEGAL_HALL_STATE" issue by adding filter capacitors: [Encoder error ERROR_ILLEGAL_HALL_STATE](https://discourse.odriverobotics.com/t/encoder-error-error-illegal-hall-state/1047/7)
   
-   - [ ] Figure out ESP8266 / ODrive communication. Details of the investigation [documented here](electronics/odrive-mini/README.md)
+   - [x] Figure out ESP8266 / ODrive communication. Details of the investigation [documented here](electronics/odrive-mini/README.md)
+     
+     *Note that this requires a logic level converter, as the ODrive GPIOs output 5V*.
   
    - [ ] [Temperature sensor](electronics/temp-sensor)
   
@@ -148,7 +150,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [ ] Go through every feature (screws, bearings, etc.) to try and reduce the amount of different hardware needed.
   
-   - [ ] Check and refine all models. *Waiting for parts to arrive*
+   - [ ] Check and refine all models.
   
    - [ ] Print, test, refine, iterate
 
