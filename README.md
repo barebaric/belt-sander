@@ -104,7 +104,13 @@ In this project I am designing and building an edge belt sander. Design constrai
      *Should suffice: The XDrive uses an STM32F405RG, which according to its [data sheet](https://www.st.com/resource/en/datasheet/stm32f405rg.pdf) can provide a maximum of 240mA at 3.3v on Vdd.
      The OLED display draws 0.08W = 24.2mA, the ESP8266 has a maximum draw of 170mA and much lower with WiFi disabled. To be safe I'll disable WiFi on the controller.*
   
-   - [ ] Breadboard the whole setup
+   - [x] Install Logic Level Converter between ODrive and microcontroller
+
+   - [x] Install Hall sensor filter capacitors
+
+   - [x] Assemble the whole setup
+
+   - [ ] Install and test the thermistor
 
 - [ ] Software
   
@@ -123,6 +129,8 @@ In this project I am designing and building an edge belt sander. Design constrai
    - [x] [Display](electronics/1.3 in display)
   
    - [x] Retrieve and display actual speed from ODrive
+
+   - [ ] Actually send the set speed to the controller. *Code fully prepared, just missing a one-liner at this point*
 
 - [ ] Design and refine an electronics enclosure module to fit into the sander
   
