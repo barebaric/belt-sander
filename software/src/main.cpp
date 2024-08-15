@@ -7,13 +7,13 @@
 #include "odrive.h"
 
 Potentiometer potentiometer(A0);
-Display display(D1, D2);
-ODrive odrive(D6, D7);
+Display display(T8, T9);
+ODrive odrive(T4, T5);
 
 void setup() {
     // Initialize serial communication.
     Serial.begin(115200);
-    while (!Serial) {}
+    //while (!Serial) {}
     Serial.println("Serial initialized");
     delay(1000);
 
