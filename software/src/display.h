@@ -30,6 +30,8 @@ public:
     // Draw the velocity in percent
     void drawSpeed(float speed);
 
+    void drawTemp(float temp);
+
 private:
     uint8_t _sda;
     uint8_t _scl;

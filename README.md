@@ -110,7 +110,9 @@ In this project I am designing and building an edge belt sander. Design constrai
 
    - [x] Assemble the whole setup
 
-   - [ ] Install and test the thermistor
+   - [x] Install and test the thermistor
+
+   - [ ] Measure hall sensor output again to check for noise
 
 - [ ] Software
   
@@ -125,7 +127,7 @@ In this project I am designing and building an edge belt sander. Design constrai
      
      *Note that this requires a logic level converter, as the ODrive GPIOs output 5V*.
   
-   - [ ] [Temperature sensor](electronics/temp-sensor)
+   - [x] [Temperature sensor](electronics/temp-sensor)
   
    - [x] [Display](electronics/1.3 in display)
   
