@@ -71,7 +71,7 @@ In this project I am designing and building an edge belt sander. Design constrai
    - Dismissed: **NodeMCU ESP8266 with 0.96 display**. Large form factor made panel dimensions too large.
    - Chosen **ESP32 S2 Mini with separate display**.
 
-- [ ] Create CAD models for all electronic components
+- [x] Create CAD models for all electronic components
   
    - [x] [90 mm skateboard motor](components/90%20mm%20skateboard%20motor%20(flat%20type))
   
@@ -86,10 +86,6 @@ In this project I am designing and building an edge belt sander. Design constrai
    - [x] [1.3" display](electronics/1.3%20in%20display)
   
    - [x] Microcontroller *(3rd party model found)*
-  
-   - [ ] Temperature sensor
-  
-   - [ ] Fan (if needed based on testing)
 
 - [ ] Build and test the electronics
   
@@ -147,9 +143,9 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [ ] Final assembly
 
-- [ ] Design and refine hub driven roller with the skateboard motor.
+- [x] Design and refine hub driven roller with the skateboard motor.
   
-   - [ ] [Model drafted](subassemblies/hub%with%20skateboard%20motor%20(flat%20type)), but some dimensions guessed for lack of technical drawings of the motor. Will need updating after finalizing the motor model.
+   - [x] [Model drafted](subassemblies/hub%with%20skateboard%20motor%20(flat%20type)), but some dimensions guessed for lack of technical drawings of the motor. Will need updating after finalizing the motor model.
   
    - [ ] Depending on heat development, the hub could be made slightly smaller to make the belt unit wider.
 
