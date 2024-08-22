@@ -42,6 +42,25 @@ Additional collected information:
 
 Not investigated much yet. There is a setting `odrv0.config.enable_i2c_instead_of_can`, but I am not sure if it is enough to use that - it seems at least the jumper next to the CAN port needs to be removed, too, perhaps more would be needed.
 
+### Via CAN
+
+Seems to be the most common method, but I didn't have a CAN adapter so not tried yet.
+
+## Firmware update
+
+The firmware can be updated, but not through USB with the odrivetool utility - that one throws UnicodeErrors upon trying.
+An st-link adapter is required. I ordered a fake STLink for about 7 Euro and that worked.
+
+However, I first tried to use the open source `st-flash` command line utility (i.e. not the proprietary STCube software),
+but the issue is that the required ODrive firmware `ODriveFirmware_v3.6-56V.elf` is provided as .elf file, which
+st-flash does not support.
+Converting the .elf to .bin is theoretically possible, but this process is architecture specific and therefore non-trivial,
+so I gave up and used the proprietary STCube which can be downloaded for free after registration on the ST website.
+
+In STCube it worked without an issue. I followed the instructions from here:
+
+https://ffbeast.github.io/docs/en/software_firmware_flashing.html
+
 ## Supplier provided specs
 
 Supplier doc/firmware repository: [GitHub - makerbase-motor/ODrive-MKS](https://github.com/makerbase-motor/ODrive-MKS)
