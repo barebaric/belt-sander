@@ -110,6 +110,8 @@ In this project I am designing and building an edge belt sander. Design constrai
 
    - [ ] Measure hall sensor output again to check for noise
 
+   - [ ] Move motor thermistor to ODrive GPIO.
+
 - [ ] Software
   
    - [x] Potentiometer to set velocity
