@@ -43,6 +43,8 @@ public:
 private:
     String readString();
 
+    void drain();
+
     SoftwareSerial _serial;
 };
 

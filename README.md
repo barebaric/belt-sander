@@ -87,7 +87,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Microcontroller *(3rd party model found)*
 
-- [ ] Build and test the electronics
+- [x] Build and test the electronics
   
    - [x] Order parts
   
@@ -108,22 +108,15 @@ In this project I am designing and building an edge belt sander. Design constrai
 
    - [x] Install and test the thermistor
 
-   - [ ] Measure hall sensor output again to check for noise
-
-   - [ ] Move motor thermistor to ODrive GPIO.
-
-- [ ] Software
+- [x] Software
   
    - [x] Potentiometer to set velocity
   
-   - [ ] [Configure and test ODrive with motor](components/90%20mm%20skateboard%20motor%20(flat%20type))
-     *Basic movement done, but had tons of trouble for it to work properly in AXIS_STATE_CLOSED_LOOP_CONTROL, until the controller burned out.*
+   - [x] [Configure and test ODrive with motor](components/90%20mm%20skateboard%20motor%20(flat%20type))
   
    - [x] Resolve "ENCODER_ERROR_ILLEGAL_HALL_STATE" issue by adding filter capacitors: [Encoder error ERROR_ILLEGAL_HALL_STATE](https://discourse.odriverobotics.com/t/encoder-error-error-illegal-hall-state/1047/7)
   
    - [x] Figure out ESP8266 / ODrive communication. Details of the investigation [documented here](electronics/odrive-mini/README.md)
-     
-     *Note that this requires a logic level converter, as the ODrive GPIOs output 5V*.
   
    - [x] [Temperature sensor](electronics/temp-sensor)
   
@@ -131,9 +124,9 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Retrieve and display actual speed from ODrive
 
-   - [ ] Actually send the set speed to the controller. *Code fully prepared, just missing a one-liner at this point*
+   - [x] Actually send the set speed to the controller.
 
-- [ ] Design and refine an electronics enclosure module to fit into the sander
+- [x] Design and refine an electronics enclosure module to fit into the sander
   
   <img src="subassemblies/eenclosure/eenclosure.png" title="" alt="eenclosure.png" width="697">
   
@@ -143,11 +136,11 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Enclosure with mount plate for ODrive Mini and brake resistor.
   
-   - [ ] Final assembly
+   - [x] Final assembly
 
 - [x] Design and refine hub driven roller with the skateboard motor.
   
-   - [x] [Model drafted](subassemblies/hub%with%20skateboard%20motor%20(flat%20type)), but some dimensions guessed for lack of technical drawings of the motor. Will need updating after finalizing the motor model.
+   - [x] [Design done](subassemblies/hub%with%20skateboard%20motor%20(flat%20type)).
   
    - [ ] Depending on heat development, the hub could be made slightly smaller to make the belt unit wider.
 
@@ -186,6 +179,8 @@ In this project I am designing and building an edge belt sander. Design constrai
 ## Potential extensions after V2
 
 * Dust extraction
+
+* Move motor thermistor to ODrive GPIO.
 
 * Oscillating unit
 
