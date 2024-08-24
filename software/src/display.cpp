@@ -30,8 +30,24 @@ void Display::clear() {
 
 // Draw a string at the specified position
 void Display::drawString(int x, int y, const char* str) {
-    _u8g2.setFont(u8g2_font_ncenB08_tr); // Choose a suitable font
+    _u8g2.setFont(u8g2_font_ncenB08_tr);
     _u8g2.drawStr(x, y, str);
+    _u8g2.sendBuffer();
+}
+
+// Draw a string at the center
+void Display::drawMessage(const char* msg, const char* substr) {
+    int centerX = _u8g2.getDisplayWidth()/2;
+    int centerY = _u8g2.getDisplayHeight()/2;
+
+    _u8g2.setFont(u8g2_font_ncenB08_tf);
+    int textWidth = _u8g2.getStrWidth(msg);
+    _u8g2.drawStr(centerX-textWidth/2, centerY-10, msg);
+
+    _u8g2.setFont(u8g2_font_timB08_tf);
+    textWidth = _u8g2.getStrWidth(substr);
+    _u8g2.drawStr(centerX-textWidth/2, centerY+10, substr);
+
     _u8g2.sendBuffer();
 }
 

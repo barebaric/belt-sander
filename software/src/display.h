@@ -24,6 +24,8 @@ public:
     // Draw a string at the specified position
     void drawString(int x, int y, const char* str);
 
+    void drawMessage(const char *msg, const char *substr);
+
     // Draw the velocity in percent
     void drawFilledSector(int centerX, int centerY, int radius, float startAngle, float endAngle);
 

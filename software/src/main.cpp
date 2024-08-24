@@ -10,16 +10,29 @@
 AnalogPin potentiometer(A0);
 float smoothed_velocity = 0;  // between 0 and 1.0
 float last_velocity = 0;  // between 0 and 1.0
+float current_velocity = 0;
+
 Thermistor thermistor(A1, 10000);
 float smoothed_temp;   // in Celsius
+float overheat_limit = 75; // Celsius. PETG glassing temp is 85 degrees, adding some margin
+float overheat_restart = 65; // Celsius
+bool overheated = false;
+
 Display display(T8, T9);
 ODrive odrive(T6, T7);
+
 int last_log = 0;
-float current_velocity = 0;
 float current_voltage = 0;
 
 TaskHandle_t UITask;
 TaskHandle_t MotorTask;
+
+void show_message(String msg) {
+    Serial.println(msg);
+    display.clearBuffer();
+    display.drawString(0, 32, msg.c_str());
+    display.sendBuffer();
+}
 
 void update_ui() {
     display.clearBuffer();
@@ -31,16 +44,6 @@ void update_ui() {
         do_log = true;
     }
 
-    // Write current speed to the display.
-    if (do_log) {
-        Serial.print("Potentiometer: ");
-        Serial.print(potentiometer.value());
-        Serial.print(", ");
-        Serial.println(potentiometer.raw_value());
-    }
-    smoothed_velocity += (potentiometer.value() - smoothed_velocity)*0.4;
-    display.drawSpeed(smoothed_velocity);
-
     // Write current temperature to the display.
     if (do_log) {
         Serial.print("Temp: ");
@@ -50,6 +53,25 @@ void update_ui() {
     }
     smoothed_temp += (thermistor.celsius() - smoothed_temp)*0.1;
     display.drawTemp(smoothed_temp);
+    if (smoothed_temp > overheat_limit)
+        overheated = true;
+    if (smoothed_temp < overheat_restart)
+        overheated = false;
+    if (overheated) {
+        display.drawMessage("Motor too hot!",
+                            "Waiting to cool down.");
+        return;
+    }
+
+    // Write current speed to the display.
+    if (do_log) {
+        Serial.print("Potentiometer: ");
+        Serial.print(potentiometer.value());
+        Serial.print(", ");
+        Serial.println(potentiometer.raw_value());
+    }
+    smoothed_velocity += (potentiometer.value() - smoothed_velocity)*0.4;
+    display.drawSpeed(smoothed_velocity);
 
     // Show status line on display.
     String msg = "Bus: " + String(current_voltage, 1) 
@@ -70,6 +92,14 @@ void ui_loop(void *parameter) {
 }
 
 void update_motor_state() {
+    // Overheat safehold.
+    if (overheated) {
+        Serial.println("Motor overheated, going to IDLE");
+        odrive.set_axis_requested_state(0, AXIS_STATE_IDLE);
+        last_velocity = 0;
+        return;
+    }
+
     // Set velocity.
     float vel_diff = abs(last_velocity - smoothed_velocity);
     if (vel_diff > 0.05) {
@@ -101,13 +131,6 @@ void motor_state_loop(void *parameter) {
         update_motor_state();
         vTaskDelay(100 / portTICK_PERIOD_MS);
     }
-}
-
-void show_message(String msg) {
-    Serial.println(msg);
-    display.clearBuffer();
-    display.drawString(0, 32, msg.c_str());
-    display.sendBuffer();
 }
 
 void setup() {
