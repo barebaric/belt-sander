@@ -141,8 +141,6 @@ In this project I am designing and building an edge belt sander. Design constrai
 - [x] Design and refine hub driven roller with the skateboard motor.
   
    - [x] [Design done](subassemblies/hub%with%20skateboard%20motor%20(flat%20type)).
-  
-   - [ ] Depending on heat development, the hub could be made slightly smaller to make the belt unit wider.
 
 - [ ] Create the new overall assembly tying everything together.
   
@@ -150,9 +148,9 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Create new belt aligner.
   
-   - [ ] Go through every feature (screws, bearings, etc.) to try and reduce the amount of different hardware needed.
+   - [x] Go through every feature (screws, bearings, etc.) to try and reduce the amount of different hardware needed.
   
-   - [ ] Check and refine all models.
+   - [x] Check and refine all models.
   
    - [ ] Print, test, refine, iterate
 
@@ -166,7 +164,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Make left carriage bearing cutouts larger - 23mm probably. It doesn't need tight clearance, as it is pulled to the right anyway.
 
-- [ ] Separate the carriage arm from the bracket, make them connectable using screws. For better printability/modularity.
+- [x] Separate the carriage arm from the bracket, make them connectable using screws. For better printability/modularity.
 
 - [x] Make the arm shorter, to make more space for electronics in the unit.
 
@@ -174,13 +172,9 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Bottom could be 2mm slimmer because it will be seated in a base plate anyway. *Not slimmed down because space was needed for routing the cable in it.*
 
-- [ ] Make lever and alignment screw in different color than the main housing.
-
 ## Potential extensions after V2
 
 * Dust extraction
-
-* Move motor thermistor to ODrive GPIO.
 
 * Oscillating unit
 
