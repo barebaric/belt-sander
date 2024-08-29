@@ -34,11 +34,11 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Design, test, and refine the lever mechanism for the belt tightener
   
-   - Done after testing more than 20 different prototypes: [type 1](subassemblies/disc%20lever), [type 2](subassemblies/slotblock%20lever), [type 3](subassemblies/rotating%20lever)
+   - Done after testing more than 20 different prototypes: [type 1](fails/disc%20lever), [type 2](fails/slotblock%20lever), [type 3](fails/rotating%20lever)
   
-   - [Latest iteration, successfully printed and tested](subassemblies/push%20lever)
+   - [Latest iteration, successfully printed and tested](sander/push%20lever)
      
-     <img src="subassemblies/push%20lever/push-lever.jpg" title="" alt="Lever designs" width="495">
+     <img src="sander/push%20lever/push-lever.jpg" title="" alt="Lever designs" width="495">
 
 - [x] Choose a motor
   
@@ -64,7 +64,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - **Chosen**: MKS XDrive (ODrive) Mini
      
-     <img src="electronics/odrive-mini/odrive.jpg" title="" alt="MKS XDrive (Odrive) Mini" width="495">
+     <img src="components/odrive-mini/odrive.jpg" title="" alt="MKS XDrive (Odrive) Mini" width="495">
 
 - [x] Choose a microcontroller
   
@@ -75,7 +75,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] [90 mm skateboard motor](components/90%20mm%20skateboard%20motor%20(flat%20type))
   
-   - [x] [MKS XDrive (Odrive) Mini](electronics/odrive-mini)
+   - [x] [MKS XDrive (Odrive) Mini](components/odrive-mini)
   
    - [x] Brake resistor *(3rd party model found)*
   
@@ -83,7 +83,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Power switch *(3rd party model found)*
   
-   - [x] [1.3" display](electronics/1.3%20in%20display)
+   - [x] [1.3" display](components/1.3%20in%20display)
   
    - [x] Microcontroller *(3rd party model found)*
 
@@ -116,11 +116,11 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Resolve "ENCODER_ERROR_ILLEGAL_HALL_STATE" issue by adding filter capacitors: [Encoder error ERROR_ILLEGAL_HALL_STATE](https://discourse.odriverobotics.com/t/encoder-error-error-illegal-hall-state/1047/7)
   
-   - [x] Figure out ESP8266 / ODrive communication. Details of the investigation [documented here](electronics/odrive-mini/README.md)
+   - [x] Figure out microcontroller / ODrive communication. Details of the investigation [documented here](components/odrive-mini/README.md)
   
-   - [x] [Temperature sensor](electronics/temp-sensor)
+   - [x] [Temperature sensor](fails/temp-sensor)
   
-   - [x] [Display](electronics/1.3 in display)
+   - [x] [Display](components/1.3%20in%20display)
   
    - [x] Retrieve and display actual speed from ODrive
 
@@ -128,7 +128,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Design and refine an electronics enclosure module to fit into the sander
   
-  <img src="subassemblies/eenclosure/eenclosure.png" title="" alt="eenclosure.png" width="697">
+  <img src="sander/eenclosure/eenclosure.png" title="" alt="eenclosure.png" width="697">
   
    - [x] Potentiometer knob
   
@@ -140,7 +140,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Design and refine hub driven roller with the skateboard motor.
   
-   - [x] [Design done](subassemblies/hub%with%20skateboard%20motor%20(flat%20type)).
+   - [x] [Design done](sander/hub).
 
 - [ ] Create the new overall assembly tying everything together.
   
