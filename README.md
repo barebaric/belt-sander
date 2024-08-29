@@ -1,6 +1,10 @@
 # Mostly Printed Edge Belt Sander
 
-![Version 1 Prototype](v1/sander-v1.jpg)
+## Overall Status
+
+The design is finished in theory, currently testing and refining.
+I do not yet recommend that you build it yourself, as testing was not yet done.
+
 
 ## Project Goals And Design Constraints
 
@@ -20,11 +24,6 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 * Ideally: Option to power from two 18V batteries.
 
-## Overall Status
-
-**V1 is a rough, first monolithic prototype** - probably not at all usable without lots of manual tweaking. It was not even fully tested - I only printed it and assembled without a motor to find issues with the overall design.
-
-**V2 is work in progress** and completely unusable so far.
 
 ## Checklist And Roadmap For First Release
 
