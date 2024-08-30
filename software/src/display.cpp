@@ -1,6 +1,8 @@
 #include <U8g2lib.h>
 #include "display.h"
 
+#define LINE_SPACING_MULTILINE_TEXT_PX 2
+
 Display::Display(uint8_t sda, uint8_t scl)
     : _sda(sda),
       _scl(scl),
@@ -35,6 +37,61 @@ void Display::drawString(int x, int y, const char* str) {
     _u8g2.sendBuffer();
 }
 
+void Display::drawStringMultiLine(int x, int y, const char* str) {
+    uint8_t maxCharWidth = _u8g2.getMaxCharWidth();
+    uint8_t screenWidth = _u8g2.getDisplayWidth();
+    uint8_t maxCharsPerLine = screenWidth / maxCharWidth;
+
+    uint32_t stringLengthBytes = strlen(str);
+    char partialString[maxCharsPerLine + 1] = {'\0'};
+    uint8_t lineStart = 0;
+    uint8_t maxCharHeight = _u8g2.getMaxCharHeight();
+
+    while (lineStart < stringLengthBytes) {
+        uint8_t lineEnd = lineStart + maxCharsPerLine;
+        uint8_t lastSpaceIdx = lineStart;
+        uint8_t partialStrLen = 0;
+
+        // Find the end of the line or the last space within the line
+        for (uint8_t i = lineStart; i < stringLengthBytes && partialStrLen < maxCharsPerLine; ++i) {
+            char currentChar = str[i];
+            if (currentChar == '\n') {
+                lastSpaceIdx = i;
+                break;
+            } else if (isspace(static_cast<unsigned char>(currentChar))) {
+                lastSpaceIdx = i;
+            }
+
+            // Increment length only for the first byte of each UTF-8 glyph
+            if ((currentChar & 0xc0) != 0x80) {
+                partialStrLen++;
+            }
+        }
+
+        // Adjust lineEnd to not cut off words
+        if (lastSpaceIdx > lineStart && (str[lineEnd] != '\n') && partialStrLen >= maxCharsPerLine) {
+            lineEnd = lastSpaceIdx;
+        }
+
+        // Copy the relevant part of the string to partialString
+        strncpy(partialString, &str[lineStart], lineEnd - lineStart);
+        partialString[lineEnd - lineStart] = '\0'; // Ensure null termination
+
+        // Draw the string using the _u8g2 attribute
+        _u8g2.drawUTF8(x, y, partialString);
+
+        // Move to the next line
+        y += maxCharHeight + LINE_SPACING_MULTILINE_TEXT_PX;
+        lineStart = lineEnd;
+
+        // Skip any spaces or newlines at the start of the next line
+        while (lineStart < stringLengthBytes && isspace(static_cast<unsigned char>(str[lineStart]))) {
+            lineStart++;
+        }
+    }
+    _u8g2.sendBuffer();
+}
+
 // Draw a string at the center
 void Display::drawMessage(const char* msg, const char* substr) {
     int centerX = _u8g2.getDisplayWidth()/2;
@@ -48,6 +105,13 @@ void Display::drawMessage(const char* msg, const char* substr) {
     textWidth = _u8g2.getStrWidth(substr);
     _u8g2.drawStr(centerX-textWidth/2, centerY+10, substr);
 
+    _u8g2.sendBuffer();
+}
+
+// Draw a string at the center
+void Display::drawError(const char* err) {
+    _u8g2.setFont(u8g2_font_baby_tf);
+    drawStringMultiLine(0, 0, err);
     _u8g2.sendBuffer();
 }
 

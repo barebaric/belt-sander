@@ -24,7 +24,13 @@ public:
     // Draw a string at the specified position
     void drawString(int x, int y, const char* str);
 
+    void drawStringMultiLine(int x, int y, const char* str);
+
+    // Draw a string and a subtitle at the center of the display
     void drawMessage(const char *msg, const char *substr);
+
+    // Draw a long multiline string on the whole screen.
+    void drawError(const char *err);
 
     // Draw the velocity in percent
     void drawFilledSector(int centerX, int centerY, int radius, float startAngle, float endAngle);

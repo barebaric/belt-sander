@@ -23,6 +23,7 @@ ODrive odrive(T6, T7);
 
 int last_log = 0;
 float current_voltage = 0;
+String error = "";
 
 TaskHandle_t UITask;
 TaskHandle_t MotorTask;
@@ -43,6 +44,7 @@ void update_ui() {
         last_log = millis();
         do_log = true;
     }
+        Serial.println("tick");
 
     // Write current temperature to the display.
     if (do_log) {
@@ -60,6 +62,15 @@ void update_ui() {
     if (overheated) {
         display.drawMessage("Motor too hot!",
                             "Waiting to cool down.");
+        return;
+    }
+
+    // Display errors, if any.
+    if (!error.isEmpty()) {
+        display.drawStringMultiLine(0, 0, error.c_str());
+        Serial.print("ERROR, bailing out: \"");
+        Serial.print(error);
+        Serial.println("\"");
         return;
     }
 
@@ -100,6 +111,20 @@ void update_motor_state() {
         return;
     }
 
+    // Retrieve current state.
+    error = odrive.get_errors(0);
+    Serial.print("Received errors: ");
+    Serial.println(error);
+    current_voltage = odrive.get_vbus_voltage();
+    Serial.print("Received voltage: ");
+    Serial.println(current_voltage);
+    current_velocity = odrive.get_current_velocity(0);
+    Serial.print("Received velocity: ");
+    Serial.println(current_velocity);
+
+    if (!error.isEmpty())
+        return;
+
     // Set velocity.
     float vel_diff = abs(last_velocity - smoothed_velocity);
     if (vel_diff > 0.05) {
@@ -116,14 +141,6 @@ void update_motor_state() {
         }
         last_velocity = smoothed_velocity;
     }
-
-    // Retrieve current state.
-    current_voltage = odrive.get_vbus_voltage();
-    Serial.print("Received voltage: ");
-    Serial.println(current_voltage);
-    current_velocity = odrive.get_current_velocity(0);
-    Serial.print("Received velocity: ");
-    Serial.println(current_velocity);
 }
 
 void motor_state_loop(void *parameter) {
