@@ -1,10 +1,7 @@
 # Mostly Printed Edge Belt Sander
 
-## Overall Status
-
-The design is finished in theory, currently testing and refining.
-I do not yet recommend that you build it yourself, as testing was not yet done.
-
+Aug 31st, 2024: The sander is now finished and works successfully for me.
+I will add more documentation in the future.
 
 ## Project Goals And Design Constraints
 
@@ -151,9 +148,9 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] Check and refine all models.
   
-   - [ ] Print, test, refine, iterate
+   - [x] Print, test, refine, iterate
 
-- [ ] Make a backing plate from steel or aluminium.
+- [x] Make a backing plate from steel or aluminium.
 
 - [ ] Design and build the final base plate.
 
