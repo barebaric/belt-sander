@@ -44,7 +44,6 @@ void update_ui() {
         last_log = millis();
         do_log = true;
     }
-        Serial.println("tick");
 
     // Write current temperature to the display.
     if (do_log) {
@@ -67,7 +66,7 @@ void update_ui() {
 
     // Display errors, if any.
     if (!error.isEmpty()) {
-        display.drawStringMultiLine(0, 0, error.c_str());
+        display.drawError(error.c_str());
         Serial.print("ERROR, bailing out: \"");
         Serial.print(error);
         Serial.println("\"");

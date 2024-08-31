@@ -28,34 +28,62 @@ const char* axisErrorMessages[] = {
     "Controller failed",
     "Position control during sensorless mode",
     "Watchdog timer expired"
+    "Min endstop pressed",
+    "Max endstop pressed",
+    "Emergency stop requested",
+    "Homing without endstop",
+    "Axis over temperature",
+    "Axis in unknown position",
 };
 
 const char* motorErrorMessages[] = {
     "No error",
     "Phase resistance out of range",
     "Phase inductance out of range",
+    "ADC failed",
     "DRV fault",
     "Control deadline missed",
-    "Modulation magnitude",
+    "Not implemented motor type",
+    "Brake current out of range",
+    "Modulation magnitude out of range",
+    "Brake deadtime violation",
+    "Unexpected timer callback",
     "Current sense saturation",
     "Current limit violation",
     "Modulation is NaN",
-    "Motor thermistor over temperature",
-    "FET thermistor over temperature",
+    "Motor thermistor over temp",
+    "FET thermistor over temp",
     "Timer update missed",
-    "Current unstable"
+    "Current measurement unavailable",
+    "Controller failed",
+    "I bus out of range",
+    "Brake resistor disarmed",
+    "System level error",
+    "Bad timing",
+    "Unknown phase estimate",
+    "Unknown phase velocity",
+    "Unknown torque",
+    "Unknown current command",
+    "Unknown current measurement",
+    "Unknown VBUS voltage",
+    "Unknown voltage command",
+    "Unknown gains",
+    "Controller initializing",
+    "Unbalanced phases"
 };
 
 const char* encoderErrorMessages[] = {
     "No error",
     "Unstable gain",
-    "CPR out of range",
+    "CPR polepairs mismatch",
     "No response",
     "Unsupported encoder mode",
     "Illegal hall state",
     "Index not found yet",
+    "ABS SPI timeout",
     "ABS SPI communication failure",
-    "ABS SPI not ready"
+    "ABS SPI not ready",
+    "Hall sensor not calibrated yet"
 };
 
 const char* controllerErrorMessages[] = {
@@ -64,10 +92,29 @@ const char* controllerErrorMessages[] = {
     "Invalid input mode",
     "Unstable gain",
     "Invalid mirror axis",
-    "Invalid load",
-    "Current limit violation"
+    "Invalid load encoder",
+    "Invalid estimate",
+    "Invalid circular range",
+    "Spinout detected"
 };
 
+
+String errorToString(uint64_t errorMask, const char** errorList) {
+    String errors = "";
+
+    // Iterate over all possible error codes
+    uint64_t mask = 1;
+    for (uint idx = 0; idx <= 40; idx++) {
+        mask = pow(2, idx);
+        if (errorMask & mask) {
+            //Serial << "IDX: " << idx << " -> 0x" << String(mask, HEX) << "\n";
+            if (!errors.isEmpty())
+                errors += ", ";
+            errors += errorList[idx];
+        }
+    }
+    return errors;
+}
 
 ODrive::ODrive(uint8_t rx, uint8_t tx) :
   _serial(rx, tx) //RX (ODrive TX), TX (ODrive RX)
@@ -162,10 +209,10 @@ String ODrive::get_errors(int axis) {
     EncoderError encoder_err = get_encoder_error(axis);
     ControllerError controller_err = get_controller_error(axis);
 
-    String axisErrorMsg = (axis_err != AXIS_ERROR_NONE) ? axisErrorMessages[axis_err] : "";
-    String motorErrorMsg = (motor_err != MOTOR_ERROR_NONE) ? motorErrorMessages[motor_err] : "";
-    String encoderErrorMsg = (encoder_err != ENCODER_ERROR_NONE) ? encoderErrorMessages[encoder_err] : "";
-    String controllerErrorMsg = (controller_err != CONTROLLER_ERROR_NONE) ? controllerErrorMessages[controller_err] : "";
+    String axisErrorMsg = errorToString(axis_err, axisErrorMessages);
+    String motorErrorMsg = errorToString(motor_err, motorErrorMessages);
+    String encoderErrorMsg = errorToString(encoder_err, encoderErrorMessages);
+    String controllerErrorMsg = errorToString(controller_err, controllerErrorMessages);
 
     return joinStrings("\n",
         axisErrorMsg,
