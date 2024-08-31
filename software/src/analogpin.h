@@ -7,9 +7,9 @@
 class AnalogPin {
 public:
     // Constructor.
-    // buffersize specifies the number of samples used for smoothing.
-    // outlierThreshold specifies the maximum difference between two readings;
-    // if it is exceeded the reading is considered an outlier and is ignored.
+    // pin specifies the analog pin to use.
+    // low and high specify the possible range of values your pin may receive and
+    // is used by percent() to convert the value to a percentage.
     AnalogPin(uint8_t pin,
               uint low=14,
               uint high=pow(2, SOC_ADC_MAX_BITWIDTH));
