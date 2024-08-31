@@ -41,3 +41,29 @@ String concatenateWithNewlines(const char* separator, const String& first, ...) 
     result.trim();
     return result;
 }
+
+void sortIntArray(int* array, int size) {
+    for (int i = 0; i < size - 1; ++i) {
+        for (int j = 0; j < size - i - 1; ++j) {
+            if (array[j] > array[j + 1]) {
+                float temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int medianFromIntArray(int* array, int size) {
+    int* tempValues = new int[size];
+    for (int i = 0; i < size; ++i)
+        tempValues[i] = array[i];
+    sortIntArray(tempValues, size);
+
+    float median = (size % 2 == 0) ? 
+        (tempValues[size / 2 - 1] + tempValues[size / 2]) / 2.0 : 
+        tempValues[size / 2];
+
+    delete[] tempValues;
+    return median;
+}

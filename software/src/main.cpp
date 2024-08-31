@@ -7,13 +7,14 @@
 #include "thermistor.h"
 #include "odrive.h"
 
-AnalogPin potentiometer(A0);
-float smoothed_velocity = 0;  // between 0 and 1.0
+#define MOTOR_MAX_SPEED 20
+
+SmoothedAnalogPin potentiometer(A0);
+float requested_velocity = 0;  // between 0 and 1.0
 float last_velocity = 0;  // between 0 and 1.0
 float current_velocity = 0;
 
 Thermistor thermistor(A1, 10000);
-float smoothed_temp;   // in Celsius
 float overheat_limit = 75; // Celsius. PETG glassing temp is 85 degrees, adding some margin
 float overheat_restart = 65; // Celsius
 bool overheated = false;
@@ -46,17 +47,18 @@ void update_ui() {
     }
 
     // Write current temperature to the display.
+    float temp = thermistor.celsius();
     if (do_log) {
         Serial.print("Temp: ");
-        Serial.print(thermistor.celsius());
+        Serial.print(temp);
         Serial.print("°C, ");
         Serial.println(thermistor.raw_value());
     }
-    smoothed_temp += (thermistor.celsius() - smoothed_temp)*0.1;
-    display.drawTemp(smoothed_temp);
-    if (smoothed_temp > overheat_limit)
+
+    display.drawTemp(temp);
+    if (temp > overheat_limit)
         overheated = true;
-    if (smoothed_temp < overheat_restart)
+    if (temp < overheat_restart)
         overheated = false;
     if (overheated) {
         display.drawMessage("Motor too hot!",
@@ -74,14 +76,18 @@ void update_ui() {
     }
 
     // Write current speed to the display.
+    // Since the potentiometer value is automatically smoothed,
+    // we read twice to speed up the convergence to the selected value,
+    // while still benefiting from outlier filtering and smoothing.
+    requested_velocity = potentiometer.percent();
+    requested_velocity = potentiometer.percent();
     if (do_log) {
         Serial.print("Potentiometer: ");
-        Serial.print(potentiometer.value());
+        Serial.print(requested_velocity);
         Serial.print(", ");
         Serial.println(potentiometer.raw_value());
     }
-    smoothed_velocity += (potentiometer.value() - smoothed_velocity)*0.4;
-    display.drawSpeed(smoothed_velocity);
+    display.drawSpeed(requested_velocity);
 
     // Show status line on display.
     String msg = "Bus: " + String(current_voltage, 1) 
@@ -125,20 +131,20 @@ void update_motor_state() {
         return;
 
     // Set velocity.
-    float vel_diff = abs(last_velocity - smoothed_velocity);
-    if (vel_diff > 0.05) {
+    float vel_diff = abs(last_velocity - requested_velocity);
+    if (vel_diff > 0.02) {
         Serial.print("Sending velocity: ");
-        Serial.println(smoothed_velocity);
-        odrive.set_velocity(0, smoothed_velocity * 25);
-        if (smoothed_velocity < 0.1) {
+        Serial.println(requested_velocity);
+        odrive.set_velocity(0, requested_velocity * MOTOR_MAX_SPEED);
+        if (requested_velocity < 0.1) {
             Serial.println("Motor going to IDLE");
             odrive.set_axis_requested_state(0, AXIS_STATE_IDLE);
         }
-        else if (last_velocity < 0.1 && smoothed_velocity >= 0.1) {
+        else if (last_velocity < 0.1 && requested_velocity >= 0.1) {
             Serial.println("Motor going to CLOSED_LOOP_CONTROL");
             odrive.set_axis_requested_state(0, AXIS_STATE_CLOSED_LOOP_CONTROL);
         }
-        last_velocity = smoothed_velocity;
+        last_velocity = requested_velocity;
     }
 }
 
@@ -158,12 +164,11 @@ void setup() {
 
     // Initialize potentiometer.
     potentiometer.begin();
-    smoothed_velocity = potentiometer.value();
+    requested_velocity = potentiometer.percent();
     Serial.println("Potentiometer initialized");
 
     // Initialize thermistor.
     thermistor.begin();
-    smoothed_temp = thermistor.celsius();
     Serial.println("Thermistor initialized");
 
     // Initialize OLED display.

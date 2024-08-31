@@ -3,12 +3,7 @@
 #include "thermistor.h"
 
 Thermistor::Thermistor(uint8_t pin, uint16_t resistance)
-    : AnalogPin(pin), _resistance(resistance) {
-}
-
-void Thermistor::begin() {
-    //adc1_config_width(ADC_WIDTH_BIT_13);
-    //adc1_config_channel_atten(_channel, ADC_ATTEN_MAX);
+    : SmoothedAnalogPin(pin), _resistance(resistance) {
 }
 
 float_t Thermistor::resistance() {

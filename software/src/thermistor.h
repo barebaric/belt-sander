@@ -5,13 +5,10 @@
 #include <driver/adc.h>
 #include "analogpin.h"
 
-class Thermistor : public AnalogPin {
+class Thermistor : public SmoothedAnalogPin {
 public:
     // Constructor
     Thermistor(uint8_t pin, uint16_t resistance);
-
-    // Initialize the potentiometer
-    void begin();
 
     // Returns current measured resistance.
     float_t resistance();

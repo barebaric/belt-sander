@@ -9,4 +9,8 @@ String concatenateWithNewlines(const char* separator, const String& first, ...);
 
 String rstrip(const String& input);
 
+void sortIntArray(int* array, int size);
+
+int medianFromIntArray(int* array, int size);
+
 #endif // UTIL_H
