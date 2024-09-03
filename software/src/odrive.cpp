@@ -174,8 +174,8 @@ float ODrive::get_vbus_voltage() {
     return readString().toFloat();
 }
 
-void ODrive::set_velocity(int axis, int vel) {
-    _serial << "w axis" << axis << ".controller.input_vel " << vel << '\n';
+void ODrive::set_velocity(int axis, float vel) {
+    _serial << "w axis" << axis << ".controller.input_vel " << String(vel, 2) << '\n';
 }
 
 float ODrive::get_current_velocity(int axis) {

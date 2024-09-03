@@ -7,7 +7,7 @@
 #include "thermistor.h"
 #include "odrive.h"
 
-#define MOTOR_MAX_SPEED 20
+#define MOTOR_MAX_SPEED 22
 
 SmoothedAnalogPin potentiometer(A0);
 float requested_velocity = 0;  // between 0 and 1.0

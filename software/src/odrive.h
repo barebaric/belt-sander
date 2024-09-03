@@ -129,7 +129,7 @@ public:
 
     float get_vbus_voltage();
 
-    void set_velocity(int axis, int vel);
+    void set_velocity(int axis, float vel);
 
     float get_current_velocity(int axis);
 
