@@ -38,11 +38,11 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Choose a motor
   
-   - Dismissed: [997 motor](components/997%20motor), mostly due to ventilation requirements.
+   - Dismissed: [997 motor](fails/997%20motor), mostly due to ventilation requirements.
   
-   - Dismissed: [Skateboard motor type 1](components/90%20mm%20skateboard%20motor). Doesn't fit into desired envelope (see design constraints above). It is too long with the shaft included.
+   - Dismissed: [Skateboard motor type 1](fails/90%20mm%20skateboard%20motor). Doesn't fit into desired envelope (see design constraints above). It is too long with the shaft included.
   
-   - Dismissed: [6384 motor](components/6384%20motor). Just about fits, but with no space left for routing the cable securely and more expensive because it requires large bearings.
+   - Dismissed: [6384 motor](fails/6384%20motor). Just about fits, but with no space left for routing the cable securely and more expensive because it requires large bearings.
   
    - **Chosen**: [90 mm skateboard motor type 2](components/90%20mm%20skateboard%20motor%20(flat%20type))
      
@@ -94,7 +94,7 @@ In this project I am designing and building an edge belt sander. Design constrai
    - [x] Figure out maximum power draw of VCC pins of ODrive. (Sufficient for microcontroller+display? Otherwise need a separate step down module)
      
      *Should suffice: The XDrive uses an STM32F405RG, which according to its [data sheet](https://www.st.com/resource/en/datasheet/stm32f405rg.pdf) can provide a maximum of 240mA at 3.3v on Vdd.
-     The OLED display draws 0.08W = 24.2mA, the ESP8266 has a maximum draw of 170mA and much lower with WiFi disabled. To be safe I'll disable WiFi on the controller.*
+     The OLED display draws 0.08W = 24.2mA, the ESP8266 has a maximum draw of 170mA and much lower with WiFi disabled. To be safe I'll keep WiFi disabled on the controller.*
   
    - [x] Install Logic Level Converter between ODrive and microcontroller
 
@@ -138,7 +138,7 @@ In this project I am designing and building an edge belt sander. Design constrai
   
    - [x] [Design done](sander/hub).
 
-- [ ] Create the new overall assembly tying everything together.
+- [x] Create the new overall assembly tying everything together.
   
    - [x] Fully model the design: *Draft done*
   
@@ -152,7 +152,7 @@ In this project I am designing and building an edge belt sander. Design constrai
 
 - [x] Make a backing plate from steel or aluminium.
 
-- [ ] Design and build the final base plate.
+- [x] Design and build the final base plate.
 
 ## Incorporate lessons learned from V1 prototype
 
